@@ -26,7 +26,7 @@ SMTP_SSL = os.getenv("SMTP_SSL", "true").lower() == "true"
 # --- CORS ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://heklo.vercel.app"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
