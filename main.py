@@ -23,12 +23,10 @@ SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "465"))
 SMTP_SSL = os.getenv("SMTP_SSL", "true").lower() == "true"
 
-CORS_ORIGIN = os.getenv("CORS_ORIGIN", "http://localhost:5173")
-
 # --- CORS ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[CORS_ORIGIN],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
